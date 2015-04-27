@@ -49,6 +49,6 @@ user operator
 """
 Logical AND and OR
 """
-cursor = db.restaurants.find({"cuisine":"Italian", "android.zipcode":"10075"})
+cursor = db.restaurants.find({"cuisine":"Italian", "address.zipcode":"10075"})
 for i in cursor:
     print i
