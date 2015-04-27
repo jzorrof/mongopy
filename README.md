@@ -1,6 +1,6 @@
-# pymongo Demo
+# Pymongo Demo
 ====
-## import data into collection
+## Import data into collection
 ----
     $mongoimport --db test --collection restaurants --drop --file xxxxx.json
 *To import data into a mongod instance running on a different host or port,* 
