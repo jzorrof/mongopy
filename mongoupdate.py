@@ -12,14 +12,25 @@ db = client.test
 Update Top-Level Fields
 """
 
+# result = db.restaurants.update_one(
+#     {"name": "Juni"},
+#     {
+#         "$set":{
+#             "cuisine": "American (New)"
+#         },
+#         "$currentDate": {"lastModified": True}
+#     }
+# )
+#
+# print result.matched_count
+
+"""
+Update an Embedded Field
+"""
+
 result = db.restaurants.update_one(
-    {"name": "Juni"},
-    {
-        "$set":{
-            "cuisine": "American (New)"
-        },
-        "$currentDate": {"lastModified": True}
-    }
+    {"restaurant_id": "41156888"},
+    {"$set": {"address.street": "East 31st Street"}}
 )
 
-result.matched_count
+print result.matched_count
