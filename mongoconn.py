@@ -14,7 +14,7 @@ access db objects
 db = client.primer
 db = client['primer']
 """
-accesse collection Objects
+access collection Objects
 """
 coll = db.dataset
 coll = db['dataset']
