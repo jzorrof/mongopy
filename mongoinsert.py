@@ -6,13 +6,13 @@ from datetime import datetime
 """
 create connection
 """
-client = MongoClient
+client = MongoClient()
 db = client.test
 
 """
 insert data
 """
-result = db.restauransts.insert_on(
+result = db.restauransts.insert_one(
     {
         "address": {
             "street": "2 Avenue",
