@@ -2,6 +2,7 @@ __author__ = 'joe_fan'
 # -*- coding: utf-8 -*-
 
 from pymongo import MongoClient
+import pymongo
 
 '''
 create connection
@@ -54,6 +55,19 @@ Logical AND and OR
 # for i in cursor:
 #     print i
 
-cursor = db.restaurants.find({"$or": [{"cuisine": "Italian", "address.zipcode": "10075"}]})
+# cursor = db.restaurants.find({"$or": [{"cuisine": "Italian", "address.zipcode": "10075"}]})
+# for i in cursor:
+#     print i
+
+"""
+sort()
+"""
+cursor = db.restaurants.find().sort(
+    [
+        ("borough", pymongo.ASCENDING),
+        ("address.zipcode", pymongo.DESCENDING)
+    ]
+)
+
 for i in cursor:
     print i
