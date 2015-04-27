@@ -13,7 +13,7 @@ Update Top-Level Fields
 """
 
 # result = db.restaurants.update_one(
-#     {"name": "Juni"},
+# {"name": "Juni"},
 #     {
 #         "$set":{
 #             "cuisine": "American (New)"
@@ -28,9 +28,25 @@ Update Top-Level Fields
 Update an Embedded Field
 """
 
-result = db.restaurants.update_one(
-    {"restaurant_id": "41156888"},
-    {"$set": {"address.street": "East 31st Street"}}
+# result = db.restaurants.update_one(
+#     {"restaurant_id": "41156888"},
+#     {"$set": {"address.street": "East 31st Street"}}
+# )
+#
+# print result.matched_count
+
+"""
+Update Multiple Documents
+"""
+
+result = db.restaurants.update_many(
+    {
+        "address.zipcode": "10016", "cuisine": "Other"
+    },
+    {
+        "$set": {"cuisine": "Category To Be Determined"},
+        "$currentDate": {"lastModified": True}
+    }
 )
 
 print result.matched_count
