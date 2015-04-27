@@ -2,6 +2,7 @@ __author__ = 'joe_fan'
 # -*- coding: utf-8 -*-
 
 from pymongo import MongoClient
+
 '''
 create connection
 '''
@@ -17,7 +18,7 @@ create cursor
 query all ... too much data
 """
 # for i in cursor:
-#     print i
+# print i
 
 """
 query by top level field
@@ -49,6 +50,10 @@ user operator
 """
 Logical AND and OR
 """
-cursor = db.restaurants.find({"cuisine":"Italian", "address.zipcode":"10075"})
+# cursor = db.restaurants.find({"cuisine": "Italian", "address.zipcode": "10075"})
+# for i in cursor:
+#     print i
+
+cursor = db.restaurants.find({"$or": [{"cuisine": "Italian", "address.zipcode": "10075"}]})
 for i in cursor:
     print i
