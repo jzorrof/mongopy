@@ -12,7 +12,7 @@ db = client.test
 """
 insert data
 """
-result = db.restauransts.insert_one(
+result = db.restaurants.insert_one(
     {
         "address": {
             "street": "2 Avenue",
@@ -39,4 +39,4 @@ result = db.restauransts.insert_one(
     }
 )
 
-result.inserted_id
+print result.inserted_id
