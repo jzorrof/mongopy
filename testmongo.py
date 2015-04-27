@@ -1,5 +1,5 @@
 __author__ = 'joe_fan'
-# -*-uft
+# -*- coding: utf-8 -*-
 from pymongo import MongoClient
 
 """
@@ -13,9 +13,9 @@ access db objects
 """
 db = client.primer
 db = client['primer']
-
 """
 accesse collection Objects
 """
 coll = db.dataset
 coll = db['dataset']
+
