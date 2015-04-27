@@ -43,6 +43,12 @@ query by a field in
 user operator
 { <field1>: { <operator1>: <value1> } }
 """
-cursor = db.restaurants.find({"grades.score":{"$lt": 10}})
+# cursor = db.restaurants.find({"grades.score":{"$lt": 10}})
+# for i in cursor:
+#     print i
+"""
+Logical AND and OR
+"""
+cursor = db.restaurants.find({"cuisine":"Italian", "android.zipcode":"10075"})
 for i in cursor:
     print i
