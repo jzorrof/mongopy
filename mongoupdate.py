@@ -39,13 +39,32 @@ Update an Embedded Field
 Update Multiple Documents
 """
 
-result = db.restaurants.update_many(
+# result = db.restaurants.update_many(
+#     {
+#         "address.zipcode": "10016", "cuisine": "Other"
+#     },
+#     {
+#         "$set": {"cuisine": "Category To Be Determined"},
+#         "$currentDate": {"lastModified": True}
+#     }
+# )
+#
+# print result.matched_count
+
+"""
+Replce Document
+"""
+
+result = db.restaurants.replace_one(
+    {"restaurant_id": "41704620"},
     {
-        "address.zipcode": "10016", "cuisine": "Other"
-    },
-    {
-        "$set": {"cuisine": "Category To Be Determined"},
-        "$currentDate": {"lastModified": True}
+        "name": "Vella 2",
+        "address": {
+            "coord": [-73.9557413, 40.7720266],
+            "building": "1480",
+            "street": "2 Avenue",
+            "zipcode": "10075"
+        }
     }
 )
 
