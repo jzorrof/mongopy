@@ -9,5 +9,6 @@ cursor=db.zh.insert({"name": "奇虎"})
 
 cursor=db.zh.find()
 for i in cursor:
+    i=i.decode("unicode_escape");
     print i
 
