@@ -1,4 +1,4 @@
-# -*- coding: <encoding name> -*-
+# -*- coding: utf-8 -*-
 __author__ = 'joe_fan'
 from pymongo import MongoClient
 
