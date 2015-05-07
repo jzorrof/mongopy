@@ -8,7 +8,7 @@ db = client.chinese
 cursor=db.zh.insert({"name": "奇虎"})
 
 cursor=db.zh.find()
-for i in cursor:
-    i=i.decode("unicode_escape");
+for v,key in cursor:
+    i=key.decode("unicode_escape");
     print i
 
