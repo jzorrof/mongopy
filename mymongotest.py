@@ -9,7 +9,7 @@ cursor=db.zh.insert({"name": "奇虎"})
 
 cursor=db.zh.find()
 for i in cursor:
-    for key, value in i:
+    for key, value in i.items():
         print key
     # i=key.decode("unicode_escape");
         print value
