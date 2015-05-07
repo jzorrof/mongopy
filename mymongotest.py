@@ -1,3 +1,4 @@
+# -*- coding: <encoding name> -*-
 __author__ = 'joe_fan'
 from pymongo import MongoClient
 
